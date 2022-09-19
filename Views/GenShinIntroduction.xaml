@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="原社区.Views.GenShinIntroduction"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:原社区.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+
+        </Grid.RowDefinitions>
+
+        <MediaElement Source="{Binding HDPath}" Grid.RowSpan="2"/>
+
+        <Border Grid.Row="0" Background="#DDDDDD" Opacity="0.2" MinHeight="100" VerticalAlignment="Top" />
+        <DockPanel VerticalAlignment="Top">
+            <ListBox x:Name="Character" ItemsSource="{Binding Characters}" >
+
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal"></StackPanel>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+
+                <behaviors:Interaction.Triggers>
+                    <behaviors:EventTrigger EventName="SelectionChanged">
+                        <behaviors:InvokeCommandAction Command="{Binding HD_WallChanged}"
+                                               CommandParameter="{Binding ElementName=Character ,Path=SelectedItem}"/>
+                    </behaviors:EventTrigger>
+                </behaviors:Interaction.Triggers>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Height="70" Width="70" Source="{Binding Q_icon}">
+                                <Image.Clip>
+                                    <EllipseGeometry Center="35,35" RadiusX="35" RadiusY="35"/>
+                                </Image.Clip>
+                            </Image>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </DockPanel>
+
+
+
+    </Grid>
+</UserControl>
