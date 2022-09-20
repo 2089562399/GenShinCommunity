@@ -29,7 +29,7 @@
             IsLeftDrawerOpen="{Binding ElementName=MenuToggleButton, Path=IsChecked}">
             <materialDesign:DrawerHost.LeftDrawerContent>
 
-                <!--导航栏-->
+                <!--侧边导航栏-->
                 <DockPanel MinWidth="220">
                     <ListBox x:Name="MenuBar" ItemsSource="{Binding MenuBars}">
                         <behaviors:Interaction.Triggers>

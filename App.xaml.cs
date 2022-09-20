@@ -1,15 +1,11 @@
 ﻿using DryIoc;
 using Prism.DryIoc;
 using Prism.Ioc;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
 using 原社区.ViewModels;
+using 原社区.ViewModels.SettingsChildViewModels;
 using 原社区.Views;
+using 原社区.Views.SettingsChildView;
 
 namespace 原社区
 {
@@ -25,6 +21,8 @@ namespace 原社区
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.RegisterForNavigation<MoreContent>();
+            containerRegistry.RegisterForNavigation<SkinView, SkinViewModel>();
             containerRegistry.RegisterForNavigation<HomeView, HomeViewModel>();   //Register For Navigation 航行登记
             containerRegistry.RegisterForNavigation<GenShinIntroduction, GenShinIntroductionModel>();   //Register For Navigation 航行登记
             containerRegistry.RegisterForNavigation<RoleIntroduction, RoleIntroductionModel>();   //Register For Navigation 航行登记

@@ -38,9 +38,9 @@ namespace 原社区.Common.Models
         public Character(IDataReader dr)
         {
             Id=Convert.ToInt32(dr["id"]);
-            Q_icon = "F:\\桌面\\多媒体项目实践\\项目实现\\项目资源\\原神资源\\Q头像\\" + dr["Q_icon"].ToString();
+            Q_icon = "F:\\桌面\\多媒体项目实践\\项目实现\\原社区\\项目资源\\原神资源\\Q头像\\" + dr["Q_icon"].ToString();
             Name =  dr["Name"].ToString();
-            Hd_WallpapersPath = "F:\\桌面\\多媒体项目实践\\项目实现\\项目资源\\原神资源\\高清背景图\\"+ dr["HD_WallpapersPath"].ToString();
+            Hd_WallpapersPath = "F:\\桌面\\多媒体项目实践\\项目实现\\原社区\\项目资源\\原神资源\\高清背景图\\" + dr["HD_WallpapersPath"].ToString();
         }
     }
 }

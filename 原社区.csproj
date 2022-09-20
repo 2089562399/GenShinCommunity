@@ -90,6 +90,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Common\Converters\ColorToBrushConverter.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
@@ -97,6 +98,7 @@
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\RoleIntroductionModel.cs" />
+    <Compile Include="ViewModels\SettingsChildViewModels\SkinViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="Views\GenShinIntroduction.xaml.cs">
       <DependentUpon>GenShinIntroduction.xaml</DependentUpon>
@@ -109,6 +111,12 @@
     </Compile>
     <Compile Include="Views\RoleIntroduction.xaml.cs">
       <DependentUpon>RoleIntroduction.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingsChildView\MoreContent.xaml.cs">
+      <DependentUpon>MoreContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingsChildView\SkinView.xaml.cs">
+      <DependentUpon>SkinView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
@@ -140,6 +148,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\RoleIntroduction.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SettingsChildView\MoreContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SettingsChildView\SkinView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
