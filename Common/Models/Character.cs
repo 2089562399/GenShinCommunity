@@ -38,9 +38,10 @@ namespace 原社区.Common.Models
         public Character(IDataReader dr)
         {
             Id=Convert.ToInt32(dr["id"]);
-            Q_icon = "F:\\桌面\\多媒体项目实践\\项目实现\\原社区\\项目资源\\原神资源\\Q头像\\" + dr["Q_icon"].ToString();
+            //image控件无法直接获取非资源文件的相对路径下的图片可以使用一下方式将图片的相对路径转为绝对路径
+            Q_icon = System.IO.Path.GetFullPath("..\\..\\项目资源\\原神资源\\Q头像\\" + dr["Q_icon"].ToString());
             Name =  dr["Name"].ToString();
-            Hd_WallpapersPath = "F:\\桌面\\多媒体项目实践\\项目实现\\原社区\\项目资源\\原神资源\\高清背景图\\" + dr["HD_WallpapersPath"].ToString();
+            Hd_WallpapersPath = "..\\..\\项目资源\\原神资源\\高清背景图\\" + dr["HD_WallpapersPath"].ToString();
         }
     }
 }

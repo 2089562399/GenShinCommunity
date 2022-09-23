@@ -24,7 +24,6 @@ namespace 原社区.ViewModels
         }
         public DelegateCommand<MenuBar> NavigateCommand { get; private set; }
         private ObservableCollection<MenuBar> menuBars;
-        private IRegionNavigationJournal journal;
         private readonly IRegionManager regionManager;
 
         private void Navigate(MenuBar obj)

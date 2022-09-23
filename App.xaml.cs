@@ -1,7 +1,9 @@
 ﻿using DryIoc;
 using Prism.DryIoc;
 using Prism.Ioc;
+using System;
 using System.Windows;
+using 原社区.Common;
 using 原社区.ViewModels;
 using 原社区.ViewModels.SettingsChildViewModels;
 using 原社区.Views;
@@ -19,9 +21,23 @@ namespace 原社区
             return Container.Resolve<MainView>();
         }
 
+
+        /// <summary>
+        /// 配置首页初始化界面参数
+        /// </summary>
+        protected override void OnInitialized()
+        {
+            var service =  App.Current.MainWindow.DataContext as IConfigureService;
+            if (service !=null)
+            {
+                service.Configure();
+            }
+            base.OnInitialized();
+        }
+
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterForNavigation<MoreContent>();
+            containerRegistry.RegisterForNavigation<MoreContent, MoreContentModel>();
             containerRegistry.RegisterForNavigation<SkinView, SkinViewModel>();
             containerRegistry.RegisterForNavigation<HomeView, HomeViewModel>();   //Register For Navigation 航行登记
             containerRegistry.RegisterForNavigation<GenShinIntroduction, GenShinIntroductionModel>();   //Register For Navigation 航行登记

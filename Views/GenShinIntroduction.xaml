@@ -37,7 +37,7 @@
                 </behaviors:Interaction.Triggers>
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
+                        <StackPanel Height="70" Width="70" Orientation="Horizontal">
                             <Image Height="70" Width="70" Source="{Binding Q_icon}">
                                 <Image.Clip>
                                     <EllipseGeometry Center="35,35" RadiusX="35" RadiusY="35"/>

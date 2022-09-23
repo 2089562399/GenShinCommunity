@@ -91,6 +91,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Common\Converters\ColorToBrushConverter.cs" />
+    <Compile Include="Common\IConfigureService.cs" />
+    <Compile Include="Common\Models\MainViewIcon.cs" />
+    <Compile Include="Extensions\MyAnimation.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
@@ -98,6 +101,7 @@
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\RoleIntroductionModel.cs" />
+    <Compile Include="ViewModels\SettingsChildViewModels\MoreContentModel.cs" />
     <Compile Include="ViewModels\SettingsChildViewModels\SkinViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="Views\GenShinIntroduction.xaml.cs">
@@ -191,7 +195,10 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Image\地理志（指南针图标2）.png" />
+    <Resource Include="Image\旅行日志%28icon%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MaterialDesignThemes.4.6.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.4.6.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
