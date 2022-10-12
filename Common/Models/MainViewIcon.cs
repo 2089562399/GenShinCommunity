@@ -16,5 +16,21 @@ namespace 原社区.Common.Models
 			set { icon = value; }
 		}
 
+		private string nameSpace;
+
+		public string NameSpace
+        {
+			get { return nameSpace; }
+			set { nameSpace = value; }
+		}
+
+		private string name;
+
+		public string Name
+		{
+			get { return name; }
+			set { name = value; }
+		}
+
 	}
 }

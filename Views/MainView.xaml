@@ -31,6 +31,13 @@
 
                 <!--侧边导航栏-->
                 <DockPanel MinWidth="220">
+
+                    <Image Source="/Image/图片1.png" DockPanel.Dock="Top" Height="42" Width="42">
+                        <Image.Clip>
+                            <EllipseGeometry Center="21,21" RadiusX="21" RadiusY="21"/>
+                        </Image.Clip>
+                    </Image>
+                    
                     <ListBox x:Name="MenuBar" ItemsSource="{Binding MenuBars}">
                         <behaviors:Interaction.Triggers>
                             <behaviors:EventTrigger EventName="SelectionChanged">
@@ -58,7 +65,7 @@
                     <DockPanel>
 
                         <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
-                            <Image Height="30" Width="30">
+                            <Image Source="/Image/图片1.png"  Height="30" Width="30">
                                 <Image.Clip>
                                     <EllipseGeometry Center="15,15" RadiusX="15" RadiusY="15"/>
                                 </Image.Clip>

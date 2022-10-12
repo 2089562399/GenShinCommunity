@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Prism.Regions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,5 +21,10 @@ namespace 原社区.Extensions
         /// 设置区域
         /// </summary>
         public static readonly string SettingsViewRegionName = "SettingsViewRegion";
+
+        /// <summary>
+        /// 导航日记
+        /// </summary>
+        public static IRegionNavigationJournal journal;
     }
 }

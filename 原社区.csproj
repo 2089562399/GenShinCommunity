@@ -91,21 +91,38 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Common\Converters\ColorToBrushConverter.cs" />
+    <Compile Include="Common\DialogHostService.cs" />
     <Compile Include="Common\IConfigureService.cs" />
+    <Compile Include="Common\IDialogHostAware.cs" />
+    <Compile Include="Common\IDialogHostService.cs" />
+    <Compile Include="Common\Models\GeographySection.cs" />
     <Compile Include="Common\Models\MainViewIcon.cs" />
     <Compile Include="Extensions\MyAnimation.cs" />
+    <Compile Include="Extensions\StaticListItems.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\Dialogs\GeographySectionShowDialogModel.cs" />
+    <Compile Include="ViewModels\Dialogs\LoginViewModel.cs" />
     <Compile Include="ViewModels\GenShinIntroductionModel.cs" />
+    <Compile Include="ViewModels\GeographySectionModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\RoleIntroductionModel.cs" />
     <Compile Include="ViewModels\SettingsChildViewModels\MoreContentModel.cs" />
     <Compile Include="ViewModels\SettingsChildViewModels\SkinViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
+    <Compile Include="Views\Dialogs\GeographySectionShowDialogView.xaml.cs">
+      <DependentUpon>GeographySectionShowDialogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dialogs\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\GenShinIntroduction.xaml.cs">
       <DependentUpon>GenShinIntroduction.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GeographySectionView.xaml.cs">
+      <DependentUpon>GeographySectionView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
@@ -133,13 +150,24 @@
     <Compile Include="Common\DB\MyDBFunction.cs" />
     <Compile Include="Common\Models\Character.cs" />
     <Compile Include="Common\Models\MenuBar.cs" />
-    <Compile Include="Extensions\CharacterStorage.cs" />
     <Compile Include="Extensions\PrismManager.cs" />
     <Page Include="MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Dialogs\GeographySectionShowDialogView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Dialogs\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\GenShinIntroduction.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GeographySectionView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -198,6 +226,23 @@
   <ItemGroup>
     <Resource Include="Image\地理志（指南针图标2）.png" />
     <Resource Include="Image\旅行日志%28icon%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\图片1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\地理志图标.png" />
+    <Resource Include="Image\地理志文字.png" />
+    <Resource Include="Image\树.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\背景.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\抠图2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Common\Dictionarys\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MaterialDesignThemes.4.6.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.4.6.0\build\MaterialDesignThemes.targets')" />

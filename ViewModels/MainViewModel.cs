@@ -26,13 +26,10 @@ namespace 原社区.ViewModels
         public DelegateCommand GoBackCommand { get; private set; }
         public DelegateCommand GoForwardCommand { get; private set; }
 
-
         public MainViewModel(IRegionManager regionManager)
         {
             MenuBars = new ObservableCollection<MenuBar>();
 
-            //获取数据库中的角色信息
-            CharacterStorage.Characters = MyDBFunction.GetAllCharacter();
 
             NavigateCommand = new DelegateCommand<MenuBar>(Navigate);  //listbox导航栏命令
             this.regionManager = regionManager;
@@ -41,18 +38,18 @@ namespace 原社区.ViewModels
 
             GoBackCommand = new DelegateCommand(() =>
             {
-                if (journal != null && journal.CanGoBack)
-                    journal.GoBack();
+                if (PrismManager.journal != null && PrismManager.journal.CanGoBack)
+                    PrismManager.journal.GoBack();
             });
 
             GoForwardCommand = new DelegateCommand(() =>
             {
-                if (journal != null && journal.CanGoForward)
-                    journal.GoForward();
+                if (PrismManager.journal != null && PrismManager.journal.CanGoForward)
+                    PrismManager.journal.GoForward();
             });
         }
         private ObservableCollection<MenuBar> menuBars;
-        private IRegionNavigationJournal journal;
+
         private readonly IRegionManager regionManager;
         public ObservableCollection<MenuBar> MenuBars
         {
@@ -77,17 +74,18 @@ namespace 原社区.ViewModels
             //更新注册区域到新的页面
             regionManager.Regions[PrismManager.MainViewRegionName].RequestNavigate(obj.NameSpace, back =>
             {
-                journal = back.Context.NavigationService.Journal;
+                PrismManager.journal = back.Context.NavigationService.Journal;
             });
 
         }
 
         void CreateMenuBar()
         {
-            MenuBars.Add(new MenuBar() { Icon = "Home", Title = "首页", NameSpace = "HomeView" });
-            MenuBars.Add(new MenuBar() { Icon = "NotebookOutline", Title = "角色介绍", NameSpace = "RoleIntroduction" });
-            MenuBars.Add(new MenuBar() { Icon = "NoteboolPlus", Title = "攻略", NameSpace = "GenShinIntroduction" });
+            MenuBars.Add(new MenuBar() { Icon = "Cog", Title = "首页", NameSpace = "HomeView" });
+            MenuBars.Add(new MenuBar() { Icon = "Cog", Title = "角色介绍", NameSpace = "RoleIntroduction" });
+            MenuBars.Add(new MenuBar() { Icon = "Cog", Title = "攻略", NameSpace = "GenShinIntroduction" });
             MenuBars.Add(new MenuBar() { Icon = "Cog", Title = "设置", NameSpace = "SettingsView" });
+            MenuBars.Add(new MenuBar() { Icon = "Cog", Title = "地理志", NameSpace = "GeographySectionView" });
         }
 
         /// <summary>

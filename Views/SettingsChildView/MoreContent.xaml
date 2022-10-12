@@ -8,6 +8,35 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <TextBlock Text="作者：虞凯" Height="200" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ContentControl x:Name="test">
+
+
+            <Image Source="/Image/图片1.png" Width="50" Height="50">
+                <!--一个行为-->
+                <behaviors:Interaction.Triggers>
+                    <behaviors:EventTrigger EventName="IsMouseOver">
+                        <behaviors:InvokeCommandAction 
+                                        Command="{Binding enen}"/>
+                    </behaviors:EventTrigger>
+                </behaviors:Interaction.Triggers>
+
+
+            </Image>
+
+        </ContentControl>
+        <Button x:Name="sfsfs" Width="100" Height="100"  Grid.Column="1" >
+            <!--一个行为-->
+            <behaviors:Interaction.Triggers>
+                <behaviors:EventTrigger EventName="Click">
+                    <behaviors:InvokeCommandAction Command="{Binding enen}"
+                                               />
+                </behaviors:EventTrigger>
+            </behaviors:Interaction.Triggers>
+        </Button>
+        <TextBlock Text="作者：虞凯" Margin="0,124,0,125" />
     </Grid>
 </UserControl>

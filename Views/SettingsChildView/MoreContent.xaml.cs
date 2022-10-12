@@ -24,5 +24,10 @@ namespace 原社区.Views.SettingsChildView
         {
             InitializeComponent();
         }
+
+        private void ss(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("点击了秃瓢");
+        }
     }
 }

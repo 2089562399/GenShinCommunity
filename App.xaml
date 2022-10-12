@@ -41,6 +41,19 @@
                     </Setter.Value>
                 </Setter>
             </Style>
+
+            <Style x:Key="MyComboBoxItem" TargetType="ComboBoxItem">
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <!--出现亮边的特效-->
+                        <Setter Property="Effect">
+                            <Setter.Value>
+                                <DropShadowEffect Color="#80B99D" ShadowDepth="5" BlurRadius="10"/>
+                            </Setter.Value>
+                        </Setter>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </prism:PrismApplication>

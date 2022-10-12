@@ -33,6 +33,11 @@ namespace 原社区.Common.DB
 
         #endregion
 
+
+        /// <summary>
+        /// 获取数据库中原神角色表中的数据
+        /// </summary>
+        /// <returns></returns>
         public static List<Character> GetAllCharacter()
         {
             var resultList = new List<Character>();
@@ -45,6 +50,20 @@ namespace 原社区.Common.DB
                 }
             }
             return resultList;
+        }
+
+        public static List<GeographySection> GetGeographySections()
+        {
+            var list = new List<GeographySection>();
+            string sql = "select * from 地域志;";
+            using(IDataReader dr = DBOper.GetReaderSql(sql))
+            {
+                while (dr.Read())
+                {
+                    list.Add(new GeographySection(dr));
+                }
+            }
+            return list;
         }
     }
 }
